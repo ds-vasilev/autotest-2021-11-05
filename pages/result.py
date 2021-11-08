@@ -1,14 +1,7 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
+from .base_page import BasePage
 from .locators import ResultLocators
-import time
 
-class GoogleResultPage:
-
-    def __init__(self, browser):
-        self.browser = browser
+class GoogleResultPage(BasePage):
 
     def calculate(self, looking_for):
         calculate_input = self.browser.find_element(*ResultLocators.CALC_FIELD)

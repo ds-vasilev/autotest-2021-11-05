@@ -24,5 +24,5 @@ def test_search_and_calculate(browser):
     result_page.calculate(LOOKING_FOR)
     assert eval(LOOKING_FOR[:-1]) == int(result_page.result_check_value())
 
-#не доделано как минимум знак деления, тк гугл возвращает данные в такой форме  (1 × 3 + 2 - 1 ÷ 1 =)
+    #гугл возвращает данные в такой форме  (1 × 3 + 2 - 1 ÷ 1 =)
     assert LOOKING_FOR == result_page.memory_check_count().replace('×','*')
